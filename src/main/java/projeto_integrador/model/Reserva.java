@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+@Data
+@NoArgsConstructor
 @Entity
 public class Reserva {
 
