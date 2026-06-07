@@ -17,6 +17,16 @@ public class Reserva {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.String)
+    private TipoReserva tipoReserva; //mesa ou ambiente
+
+    @Enumerated(EnumType.String)
+    private StatusReserva status = StatusReserva.PENDENTE; //pendente, confirmada ou cancelada
+
+    private String tipoEvento; //apenas para reserva de ambiente
+
+    private String decoracao; // apenas para reserva de ambiente ambiente
+
     private String nomeCliente;
 
     private String telefone;
@@ -26,4 +36,12 @@ public class Reserva {
     private LocalTime horario;
 
     private Integer quantidadePessoas;
+
+    public enum TipoReserva {
+        MESA, AMBIENTE
+    }
+
+    public enum StatusReserva {
+        PENDENTE, CONFIRMADA, CANCELADA
+    }
 }
